@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+}
+:root {
+	--color-card-bg: hsl(0, 0%, 98%);
+	--color-gray: hsl(0, 0%, 59%);
+	--color-dark-gray: hsl(0, 0%, 17%);
+
+	--bg-img-mobile: url('../images/pattern-bg-mobile.png');
+	--bg-img-desktop: url('../images/pattern-bg-desktop.png');
+	--border-radius: 0.9rem;
+}
+body {
+	height: 100vh;
+	width: 100vw;
+	/* max-width: 1440px; */
+
+	display: flex;
+	justify-content: center;
+	font-size: 1.5rem;
+}
+main.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+
+	height: 300px;
+	background-image: var(--bg-img-desktop);
+	background-repeat: no-repeat;
+	background-size: 100vw;
+	/* background-color: lightsteelblue; */
+	text-align: center;
+}
+.sub-wrapper {
+	width: 90%;
+	display: flex;
+	flex-direction: inherit;
+	align-items: center;
+}
+.title {
+	color: var(--color-card-bg);
+	font-weight: 500;
+	margin: 1.75rem 0;
+	font-size: 2rem;
+}
+/* ---- basic button styles ---------------------------------------------------- */
+button {
+	border: none;
+	outline: none;
+}
+button:hover {
+	opacity: 80%;
+	cursor: pointer;
+}
+input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: var(--color-dark-gray);
+}
+/* ---- search-section ---------------------------------------------------- */
+.search-section {
+	display: flex;
+	justify-content: space-between;
+
+	width: 40%;
+	min-width: 375px;
+	max-width: 600px;
+
+	background-color: var(--color-card-bg);
+	border-radius: var(--border-radius);
+}
+#search-bar {
+	width: 100%;
+	padding: 0 1rem;
+	font-size: 18px;
+}
+#search-bar::placeholder {
+	/* font-size: 0.75rem; */
+	color: var(--color-gray);
+}
+#search-bar:focus::placeholder {
+	color: transparent;
+}
+#search-button {
+	display: flex; /* Without flex, arrow icon wasn't vertically centered*/
+	align-items: center;
+	padding: 1.3rem 1.3rem;
+	background-color: var(--color-dark-gray);
+	border-top-right-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
+}
+/* ---- result-section ---------------------------------------------------- */
+.sub-wrapper .result-section {
+	display: flex;
+	justify-content: space-between;
+	/* width: 70%; with this, text is over the result-section frame */
+	min-width: 375px;
+	background-color: var(--color-card-bg);
+	border-radius: var(--border-radius);
+	padding: 2rem;
+	margin: 3rem 0;
+}
+.result-section .sub-title {
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-align: left;
+	padding: 0.6rem 0;
+
+	color: var(--color-gray);
+}
+.result-section .result-value {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+.dividers {
+	border-right: 1px solid var(--color-gray);
+	margin: 0 1.5rem;
+	opacity: 50%;
+}
+.result-section div[class$='-part'] {
+	width: 250px;
+	text-align: left;
+}
+
+/* ---- Map & Background images ---------------------------------------------------- */
+#map {
+	position: absolute;
+	width: 100%;
+	height: inherit;
+	/* top: 300px; */
+	z-index: -1;
+	/* Keeps the map behind all other content */
+
+	background-color: grey;
+}
+
+
+
+
+/* ---- Media queries and other styles ---------------------------------------------------- */
+@media screen and (max-width: 1440px) {
+	/* For tablets: */
+	main.wrapper {
+		background-image: var(--bg-img-mobile);
+	}
+	#search-bar::placeholder {
+		color: transparent;
+	}
+	.result-section {
+		display: flex;
+		flex-direction: column;
+		width: 40%;
+		/* min-width: 450px; */
+	}
+	.result-section .sub-title {
+		text-align: center;
+	}
+	.result-value {
+		text-align: center;
+	}
+	.result-section div[class$='-part'] {
+		width: 100%;
+		text-align: center;
+      padding: 0.5rem 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/* For mobile phones: */
+
+	.main.wrapper {
+		background-image: var(--bg-img-mobile);
+	}
+
+	.result-section {
+		display: flex;
+		flex-direction: column;
+	}
+	.result-section .sub-title {
+		text-align: center;
+	}
+	.result-value {
+		text-align: center;
+	}
+	.result-section div[class$='-part'] {
+		width: 100%;
+		text-align: center;
+      padding: 0.5rem 0;
+	}
+}

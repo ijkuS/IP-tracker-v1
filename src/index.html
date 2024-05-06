@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../images/favicon-32x32.png" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+			integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+			crossorigin="" />
+		<!-- Make sure you put this AFTER Leaflet's CSS -->
+		<script
+			src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin=""></script>
+		<title>Frontend Mentor | IP Address Tracker</title>
+	</head>
+	<body>
+		<main class="wrapper">
+			<p class="title">IP Address Tracker</p>
+			<div class="sub-wrapper">
+				<nav class="search-section">
+					<input
+						id="search-bar"
+						placeholder="Search for any IP address or domain" />
+					<button id="search-button">
+						<img
+							src="../images/icon-arrow.svg"
+							alt="icon-arrow" />
+					</button>
+				</nav>
+				<section class="result-section">
+					<div class="ip-address-part">
+						<p class="sub-title">IP address</p>
+						<div class="result-value">
+							<p id="ip-address"></p>
+						</div>
+					</div>
+
+					<div class="dividers"></div>
+
+					<div class="location-part">
+						<p class="sub-title">Location</p>
+						<div class="result-value">
+							<p id="location"></p>
+						</div>
+					</div>
+
+					<div class="dividers"></div>
+
+					<div class="timezone-part">
+						<p class="sub-title">Timezone</p>
+						<div class="result-value">
+							<p id="timezone"></p>
+						</div>
+					</div>
+
+					<div class="dividers"></div>
+
+					<div class="isp-part">
+						<p class="sub-title">ISP</p>
+						<div class="result-value">
+							<p id="isp"></p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<div id="map"></div>
+	</body>
+	<script src="index.js"></script>
+	<script type="text/javascript" src="../config.js"></script>
+</html>
