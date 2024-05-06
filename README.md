@@ -5,6 +5,10 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 ## Overview
 A simple map application for searching by IP address using APIs. I found a challenge called the ‘IP Tracker App’ on Frontend Mentor. To obtain the IP address locations, I will be using the IP Geolocation API by IPify, and to generate the map, will use LeafletJS.
 
+Since API key should not be opened, I made it a separate file as config.js which is not included this GitHub folder. Please see my screenshot and you can put your own API key in my index.js code instead below. 
+	"const GEO_IPIFY_API_KEY = config.GEO_IPIFY_API_KEY;"
+
+
 
 ### The challenge
 Users should be able to:
